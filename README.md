@@ -29,6 +29,8 @@ In this project, I needed to create various predictive models to determine which
 2 predictive models were created, and each were evaluated based on their Accuracy and F1-Score<br>
 1. Logistic Regression Model - Resulted in Accuracy of ~.7 and F1 Score of ~.58<br>
 2. GBT Classifier Model - Resulted in Accuracy of ~.66 and F1 Score of ~.63<br>
+![Model Results Comparison](/base_model_results.png)<br>
+
 Based on the above, it seems like the GBT Classifier was the optimal model to use to predict churn based on the balance of Accuracy and F1-Score. Also the GBT Classifier can certainly be fine tuned more to increase the metrics.
 
 ### Tuning of GBT Classifier Model
