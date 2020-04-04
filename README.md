@@ -17,27 +17,34 @@ This is from the Sparkify notebook, after successfully running all the cells, th
 This current file
 
 ### Libraries And Technologies Used
-PySpark (Spark libraries and specific functions)
-Numpy
-Pandas
-Matplotlib
-Jupyter Notebook
-Python
+PySpark (Spark libraries and specific functions)<br>
+Numpy <br>
+Pandas <br>
+Matplotlib <br>
+Jupyter Notebook <br>
+Python <br>
 
 ### Summary of Analysis
 In this project, I needed to create various predictive models to determine which model would be best for predicting churn in the Sparkify dataset.<br>
-3 predictive models were created, and each were evaluated based on their Accuracy and F1-Score<br>
+2 predictive models were created, and each were evaluated based on their Accuracy and F1-Score<br>
 1. Logistic Regression Model - Resulted in Accuracy of ~.7 and F1 Score of ~.58<br>
 2. GBT Classifier Model - Resulted in Accuracy of ~.66 and F1 Score of ~.63<br>
-3. Random Forest Classifier Model - Resulted in Accuracy of ~.76 and F1 Score of ~.71<br>
-Based on the above, it seems like the Random Forest Classifier was the optimal model to use to predict churn
+Based on the above, it seems like the GBT Classifier was the optimal model to use to predict churn based on the balance of Accuracy and F1-Score. Also the GBT Classifier can certainly be fine tuned more to increase the metrics.
+
+### Tuning of GBT Classifier Model
+After tuning the GBT classifier, I was able to improve the model's metrics to an Accuracy of ~.73 and F1 Score of ~.68.<br>
+These are the parameters that worked best for my GBT Classifer after tuning. <br>
+    -maxIter (20) <br>
+    -maxDepth (3)<br>
+    -minInfoGain (0) <br>
+    -minInstancesPerNode (1)<br>
 
 ### Conclusion
 Conclusion:<br>
-In this project, I was able to implement a python notebook that loads, explores, and cleans customer data which is then used to build a machine learning model that can predict customer churn. In the dataset used for the predictive models, I had 9 features (not including the churn feature nor userId). I was able to build 3 machine learning models which are 1. Logistic Regression Model, 2. GBT Classifier Model, and 3. Random Forest Classifer Model. After comparing the Accuracy and F1-Score for each model, I determined that Random Forest Classifier Model performed best for predicting customer churn. <br><br>
+In this project, I was able to implement a python notebook that loads, explores, and cleans customer data which is then used to build a machine learning model that can predict customer churn. In the dataset used for the predictive models, I had 9 features (not including the churn feature nor userId). I was able to build 2 machine learning models which are 1. Logistic Regression Model and 2. GBT Classifier Model. After comparing the Accuracy and F1-Score for each model, I determined that GBT Classifier Model was best balanced for predicting customer churn.<br><br>
 
 Improvements:<br>
-I think some improvements could certainly be made to this implementation. In this particular project, I have only used subset of the data (12MB). The full dataset is 12GB which would certainly make a HUGE difference and would allow me to have a better idea on which features may be worth a serious look and which features may be more important when creating a predictive model. Although 12MB of data certainly provides enough for this initial model, there can be some inaccuracies that could have been missed. Also, in the models I created, I simply used some specific features that I thought were relevant for my model although I could have certainly used more or all the features in my final dataset and possible have gotten a better model, although this would have taken a lot more time and computing power.<br><br>
+I think some improvements could certainly be made to this implementation. In this particular project, I have only used subset of the data (12MB). The full dataset is 12GB which would certainly make a HUGE difference and would allow me to have a better idea on which features may be worth a serious look and which features may be more important when creating a predictive model. Although 12MB of data certainly provides enough for this initial model, there can be some inaccuracies that could have been missed. Also, in the models I created, I simply used some specific features that I thought were relevant for my model although I could have certainly used more or all the features in my final dataset and possibly have gotten a better model. I also could have tuned the model's hyperparameters more, although this would have taken a lot more time and computing power. <br><br>
 
 Reflection:<br>
 I enjoyed working through this project as it reflected a very real example. This is certainly something that all types of customers go through where they want to make sure they can really understand their clients better and be able to have a proactive approach rather than a reactive approach when it comes to their customers leaving. As explained in previous lessons of the Udacity Nanodegree program, the most important aspect of this project as well as for any other project with lots of data, is exploring and preprocessing the data. In order to really have models that are useful in a real world example, there needs to be a lot of thinking on how you can preprocess your data to make sure you can create a dataset that is ready for training models with. With bad preprocessing, the models created may not be as effective as you might want.
